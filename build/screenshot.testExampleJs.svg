@@ -6,8 +6,8 @@
 <tspan x="10" y="58">&gt; [ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall</tspan>
 <tspan x="10" y="74"></tspan>
 <tspan x="10" y="90">/tmp/app</tspan>
-<tspan x="10" y="106">└── swgg-wechat@2017.11.21  (git://github.com/kaizhu256/node-swgg-wechat.git#4a9f0f6321766a7b624\</tspan>
-<tspan x="10" y="122">e7224452cd16642c72943)</tspan>
+<tspan x="10" y="106">└── swgg-wechat@2017.11.21  (git://github.com/kaizhu256/node-swgg-wechat.git#67e9291b0ee563a1a21\</tspan>
+<tspan x="10" y="122">9ed36493553ee69ddce27)</tspan>
 <tspan x="10" y="138"></tspan>
 <tspan x="10" y="154">npm WARN enoent ENOENT: no such file or directory, open '/tmp/app/package.json'</tspan>
 <tspan x="10" y="170">npm WARN app No description</tspan>

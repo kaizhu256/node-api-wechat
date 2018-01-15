@@ -2,14 +2,14 @@
 <rect height="942" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
 <tspan x="10" y="26"></tspan>
-<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2017-12-12T12:33:59.745Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
+<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2018-01-15T16:25:50.880Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
 <tspan x="10" y="58">ode-swgg-wechat</tspan>
 <tspan x="10" y="74"></tspan>
 <tspan x="10" y="90"></tspan>
 <tspan x="10" y="106">buildApidoc - merged test-report from file /home/travis/build/kaizhu256/node-swgg-wechat/tmp/bui\</tspan>
 <tspan x="10" y="122">ld/test-report.json</tspan>
 <tspan x="10" y="138">override assets assets.swgg.swagger.json</tspan>
-<tspan x="10" y="154">&gt; server listening on http-port 58318</tspan>
+<tspan x="10" y="154">&gt; server listening on http-port 58653</tspan>
 <tspan x="10" y="170">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-wechat/package.json</tspan>
 <tspan x="10" y="186">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-wechat/assets.swgg.swagger.jso\</tspan>
 <tspan x="10" y="202">n</tspan>
@@ -30,24 +30,24 @@
 <tspan x="10" y="442">ld/test-report.json</tspan>
 <tspan x="10" y="458"></tspan>
 <tspan x="10" y="474">-------------------------------------------------------</tspan>
-<tspan x="10" y="490">| test-report - buildApidoc - node - linux v6.12.2 - 2017-12-12T12:33:59.977Z</tspan>
-<tspan x="10" y="506">|     146 ms            0 failed        1 passed      |</tspan>
+<tspan x="10" y="490">| test-report - buildApidoc - node - linux v6.12.3 - 2018-01-15T16:25:51.104Z</tspan>
+<tspan x="10" y="506">|     129 ms            0 failed        1 passed      |</tspan>
 <tspan x="10" y="522">-------------------------------------------------------</tspan>
 <tspan x="10" y="538">| test-report - npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleW\</tspan>
-<tspan x="10" y="554">ebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2017-12-12T\</tspan>
-<tspan x="10" y="570">12:33:42.205Z</tspan>
-<tspan x="10" y="586">|      10 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="554">ebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-01-15T\</tspan>
+<tspan x="10" y="570">16:25:33.507Z</tspan>
+<tspan x="10" y="586">|      11 ms            0 failed        8 passed      |</tspan>
 <tspan x="10" y="602">-------------------------------------------------------</tspan>
-<tspan x="10" y="618">| test-report - npmTest - node - linux v6.12.2 - 2017-12-12T12:33:39.887Z</tspan>
-<tspan x="10" y="634">|   16669 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="618">| test-report - npmTest - node - linux v6.12.3 - 2018-01-15T16:25:31.361Z</tspan>
+<tspan x="10" y="634">|   16571 ms            0 failed        8 passed      |</tspan>
 <tspan x="10" y="650">-------------------------------------------------------</tspan>
 <tspan x="10" y="666">| test-report - npmTestPublished - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_6\</tspan>
 <tspan x="10" y="682">4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 20\</tspan>
-<tspan x="10" y="698">17-12-12T12:32:32.166Z</tspan>
-<tspan x="10" y="714">|      12 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="698">18-01-15T16:24:25.858Z</tspan>
+<tspan x="10" y="714">|      11 ms            0 failed        8 passed      |</tspan>
 <tspan x="10" y="730">-------------------------------------------------------</tspan>
-<tspan x="10" y="746">| test-report - npmTestPublished - node - linux v6.12.2 - 2017-12-12T12:32:29.411Z</tspan>
-<tspan x="10" y="762">|   17028 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="746">| test-report - npmTestPublished - node - linux v6.12.3 - 2018-01-15T16:24:23.186Z</tspan>
+<tspan x="10" y="762">|   17006 ms            0 failed        8 passed      |</tspan>
 <tspan x="10" y="778">-------------------------------------------------------</tspan>
 <tspan x="10" y="794"></tspan>
 <tspan x="10" y="810">created test-report file /home/travis/build/kaizhu256/node-swgg-wechat/tmp/build/test-report.htm\</tspan>
@@ -57,6 +57,6 @@
 <tspan x="10" y="874">buildApidoc - 0 failed tests</tspan>
 <tspan x="10" y="890"></tspan>
 <tspan x="10" y="906"></tspan>
-<tspan x="10" y="922">[MODE_BUILD=buildApidoc] - 2017-12-12T12:34:01.976Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="922">[MODE_BUILD=buildApidoc] - 2018-01-15T16:25:53.017Z - EXIT_CODE - 0</tspan>
 </text>
 </svg>
