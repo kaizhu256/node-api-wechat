@@ -1,44 +1,47 @@
-<svg height="654" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="654" fill="#555" width="720"></rect>
+<svg height="702" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="702" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">2018-01-19 13:41:46 +0700</tspan>
-<tspan x="10" y="42">package.json</tspan>
+<tspan x="10" y="26">2018-01-19 13:56:43 +0700</tspan>
+<tspan x="10" y="42">heroku</tspan>
 <tspan x="10" y="58"></tspan>
-<tspan x="10" y="74">2018-01-19 13:35:37 +0700</tspan>
-<tspan x="10" y="90">- rename package-name swgg-wechat -&gt; swgg-wechat-all</tspan>
+<tspan x="10" y="74">2018-01-19 13:41:46 +0700</tspan>
+<tspan x="10" y="90">package.json</tspan>
 <tspan x="10" y="106"></tspan>
-<tspan x="10" y="122">2018-01-19 13:28:02 +0700</tspan>
-<tspan x="10" y="138">- fix failed semanticRequired validation-error in ui</tspan>
-<tspan x="10" y="154">- remove unused datatable link</tspan>
-<tspan x="10" y="170"></tspan>
-<tspan x="10" y="186">2018-01-15 23:22:44 +0700</tspan>
-<tspan x="10" y="202">minor</tspan>
+<tspan x="10" y="122">2018-01-19 13:35:37 +0700</tspan>
+<tspan x="10" y="138">- rename package-name swgg-wechat -&gt; swgg-wechat-all</tspan>
+<tspan x="10" y="154"></tspan>
+<tspan x="10" y="170">2018-01-19 13:28:02 +0700</tspan>
+<tspan x="10" y="186">- fix failed semanticRequired validation-error in ui</tspan>
+<tspan x="10" y="202">- remove unused datatable link</tspan>
 <tspan x="10" y="218"></tspan>
-<tspan x="10" y="234">2017-12-12 19:27:33 +0700</tspan>
-<tspan x="10" y="250">- sync with $npm_package_githubRepoAlias</tspan>
+<tspan x="10" y="234">2018-01-15 23:22:44 +0700</tspan>
+<tspan x="10" y="250">minor</tspan>
 <tspan x="10" y="266"></tspan>
-<tspan x="10" y="282">2017-11-21 14:56:59 +0800</tspan>
-<tspan x="10" y="298">minor</tspan>
+<tspan x="10" y="282">2017-12-12 19:27:33 +0700</tspan>
+<tspan x="10" y="298">- sync with $npm_package_githubRepoAlias</tspan>
 <tspan x="10" y="314"></tspan>
-<tspan x="10" y="330">2017-11-21 13:20:07 +0800</tspan>
-<tspan x="10" y="346">[build clean]</tspan>
+<tspan x="10" y="330">2017-11-21 14:56:59 +0800</tspan>
+<tspan x="10" y="346">minor</tspan>
 <tspan x="10" y="362"></tspan>
-<tspan x="10" y="378">2017-11-21 12:37:57 +0800</tspan>
-<tspan x="10" y="394">[npm publish] - npm publish 2017.11.20</tspan>
-<tspan x="10" y="410">- add api POST /pay/closeorder</tspan>
-<tspan x="10" y="426">- add api POST /pay/downloadbill</tspan>
-<tspan x="10" y="442">- add api POST /pay/micropay</tspan>
-<tspan x="10" y="458">- add api POST /pay/queryexchagerate</tspan>
-<tspan x="10" y="474">- add api POST /pay/refundquery</tspan>
-<tspan x="10" y="490">- add api POST /pay/settlementquery</tspan>
-<tspan x="10" y="506">- add api POST /pay/unifiedorder</tspan>
-<tspan x="10" y="522">- add api POST /payitil/report</tspan>
-<tspan x="10" y="538">- add api POST /secapi/pay/refund</tspan>
-<tspan x="10" y="554">- add api POST /secapi/pay/reverse</tspan>
-<tspan x="10" y="570">- add api POST /tools/shorturl</tspan>
-<tspan x="10" y="586">- add api POST /{notify_url}</tspan>
-<tspan x="10" y="602"></tspan>
-<tspan x="10" y="618">2014-03-26 02:31:50 +0700</tspan>
-<tspan x="10" y="634">add blank README.md</tspan>
+<tspan x="10" y="378">2017-11-21 13:20:07 +0800</tspan>
+<tspan x="10" y="394">[build clean]</tspan>
+<tspan x="10" y="410"></tspan>
+<tspan x="10" y="426">2017-11-21 12:37:57 +0800</tspan>
+<tspan x="10" y="442">[npm publish] - npm publish 2017.11.20</tspan>
+<tspan x="10" y="458">- add api POST /pay/closeorder</tspan>
+<tspan x="10" y="474">- add api POST /pay/downloadbill</tspan>
+<tspan x="10" y="490">- add api POST /pay/micropay</tspan>
+<tspan x="10" y="506">- add api POST /pay/queryexchagerate</tspan>
+<tspan x="10" y="522">- add api POST /pay/refundquery</tspan>
+<tspan x="10" y="538">- add api POST /pay/settlementquery</tspan>
+<tspan x="10" y="554">- add api POST /pay/unifiedorder</tspan>
+<tspan x="10" y="570">- add api POST /payitil/report</tspan>
+<tspan x="10" y="586">- add api POST /secapi/pay/refund</tspan>
+<tspan x="10" y="602">- add api POST /secapi/pay/reverse</tspan>
+<tspan x="10" y="618">- add api POST /tools/shorturl</tspan>
+<tspan x="10" y="634">- add api POST /{notify_url}</tspan>
+<tspan x="10" y="650"></tspan>
+<tspan x="10" y="666">2014-03-26 02:31:50 +0700</tspan>
+<tspan x="10" y="682">add blank README.md</tspan>
 </text>
 </svg>
