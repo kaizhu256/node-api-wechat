@@ -37,10 +37,23 @@
         local.global = local.modeJs === 'browser'
             ? window
             : global;
-        // re-init local
-        local = local.global.local = (local.global.utility2 ||
-            require('./assets.utility2.rollup.js')).requireReadme();
-        // init test
-        local.testRunInit(local);
+        // init utility2_rollup
+        local = local.global.utility2_rollup || local;
+        // init lib
+        local.local = local.swgg_wechat_all = local;
+        // init exports
+        if (local.modeJs === 'browser') {
+            local.global.utility2_swgg_wechat_all = local;
+        } else {
+            // require builtins
+            Object.keys(process.binding('natives')).forEach(function (key) {
+                if (!local[key] && !(/\/|^_|^sys$/).test(key)) {
+                    local[key] = require(key);
+                }
+            });
+            module.exports = local.global.utility2_rollup || require('./assets.utility2.rollup.js');
+            module.exports.__dirname = __dirname;
+            module.exports.module = module;
+        }
     }());
 }());

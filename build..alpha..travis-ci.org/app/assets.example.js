@@ -99,22 +99,24 @@
 
 
 
+
+
 /*
 example.js
 
-this script will run a web-demo of swgg-wechat
+this script will run a web-demo of swgg-wechat-all
 
 instruction
     1. save this script as example.js
     2. run the shell command:
-        $ npm install swgg-wechat && PORT=8081 node example.js
+        $ npm install swgg-wechat-all && PORT=8081 node example.js
     3. open a browser to http://127.0.0.1:8081 and play with the web-demo
     4. edit this script to suit your needs
 */
 
 
 
-/* istanbul instrument in package swgg_wechat */
+/* istanbul instrument in package swgg_wechat_all */
 /*jslint
     bitwise: true,
     browser: true,
@@ -155,7 +157,7 @@ instruction
             : global;
         // init utility2_rollup
         local = local.global.utility2_rollup || (local.modeJs === 'browser'
-            ? local.global.utility2_swgg_wechat
+            ? local.global.utility2_swgg_wechat_all
             : global.utility2_moduleExports);
         // init exports
         local.global.local = local;
@@ -211,9 +213,9 @@ instruction
                 case 'npm_package_description':
                     return 'the greatest app in the world!';
                 case 'npm_package_name':
-                    return 'swgg-wechat';
+                    return 'swgg-wechat-all';
                 case 'npm_package_nameLib':
-                    return 'swgg_wechat';
+                    return 'swgg_wechat_all';
                 case 'npm_package_version':
                     return '0.0.1';
                 default:
@@ -229,10 +231,10 @@ instruction
             local.fs.readFileSync(__filename, 'utf8');
         // bug-workaround - long $npm_package_buildCustomOrg
         /* jslint-ignore-begin */
-        local.assetsDict['/assets.swgg_wechat.js'] =
-            local.assetsDict['/assets.swgg_wechat.js'] ||
+        local.assetsDict['/assets.swgg_wechat_all.js'] =
+            local.assetsDict['/assets.swgg_wechat_all.js'] ||
             local.fs.readFileSync(
-                local.__dirname + '/lib.swgg_wechat.js',
+                local.__dirname + '/lib.swgg_wechat_all.js',
                 'utf8'
             ).replace((/^#!/), '//');
         /* jslint-ignore-end */

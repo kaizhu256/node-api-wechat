@@ -2,12 +2,12 @@
 <rect height="254" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
 <tspan x="10" y="26"></tspan>
-<tspan x="10" y="42">&gt; swgg-wechat@2017.11.21 postinstall /tmp/app/node_modules/swgg-wechat</tspan>
+<tspan x="10" y="42">&gt; swgg-wechat-all@2018.1.18 postinstall /tmp/app/node_modules/swgg-wechat-all</tspan>
 <tspan x="10" y="58">&gt; [ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall</tspan>
 <tspan x="10" y="74"></tspan>
 <tspan x="10" y="90">/tmp/app</tspan>
-<tspan x="10" y="106">└── swgg-wechat@2017.11.21  (git://github.com/kaizhu256/node-swgg-wechat.git#67e9291b0ee563a1a21\</tspan>
-<tspan x="10" y="122">9ed36493553ee69ddce27)</tspan>
+<tspan x="10" y="106">└── swgg-wechat-all@2018.1.18  (git://github.com/kaizhu256/node-swgg-wechat-all.git#a4f77f49ecae\</tspan>
+<tspan x="10" y="122">649667df72e97a75f5b59fe93e17)</tspan>
 <tspan x="10" y="138"></tspan>
 <tspan x="10" y="154">npm WARN enoent ENOENT: no such file or directory, open '/tmp/app/package.json'</tspan>
 <tspan x="10" y="170">npm WARN app No description</tspan>
