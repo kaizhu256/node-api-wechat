@@ -7,7 +7,6 @@
 <title>swgg</title>
 <style>
 /*csslint
-    box-model: false,
     box-sizing: false,
     universal-selector: false
 */
@@ -59,16 +58,6 @@ button {
 @keyframes uiAnimateSpin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-.uiAnimateSpin {
-    animation: uiAnimateSpin 2s linear infinite;
-    border: 6px solid #999;
-    border-radius: 50%;
-    border-top: 8px solid #7d7;
-    display: inline-block;
-    height: 25px;
-    vertical-align: middle;
-    width: 25px;
 }
 .utility2FooterDiv {
     text-align: center;
@@ -240,10 +229,6 @@ button {
 .swggUiContainer .resource:first-child {
     border-top: 1px solid #777;
 }
-.swggUiContainer .resource > .thead > .td2 {
-    border-left: 1px solid #777;
-    border-right: 1px solid #777;
-}
 .swggUiContainer .styleBorderBottom1px {
     border-bottom: 1px solid #777;
 }
@@ -358,9 +343,6 @@ button {
 .swggUiContainer .resource:first-child {
     padding-top: 10px;
 }
-.swggUiContainer .resource > .thead > .td2 {
-    padding: 0 20px;
-}
 .swggUiContainer .resourceDescription {
     padding: 10px 20px;
 }
@@ -433,6 +415,7 @@ button {
 </head>
 <body>
 <div id="ajaxProgressDiv1" style="background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 500ms, width 1500ms; width: 0%; z-index: 1;"></div>
+<div class="uiAnimateSpin" style="animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: none; height: 25px; vertical-align: middle; width: 25px;"></div>
 <script>
 /*jslint
     bitwise: true,
@@ -507,7 +490,7 @@ button {
 
 <div id="swggAjaxProgressDiv1" style="text-align: center;">
     <span>loading script</span>
-    <span class="uiAnimateSpin"></span>
+    <div class="uiAnimateSpin" style="animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: inline-block; height: 25px; vertical-align: middle; width: 25px;"></div>
 </div>
 <div class="reset resourceList"></div>
 <div class="utility2FooterDiv">
