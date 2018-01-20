@@ -2,7 +2,7 @@
 <rect height="2414" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
 <tspan x="10" y="26"></tspan>
-<tspan x="10" y="42">[MODE_BUILD=npmTest] - 2018-01-19T07:02:10.020Z - npm-testing /home/travis/build/kaizhu256/node-\</tspan>
+<tspan x="10" y="42">[MODE_BUILD=npmTest] - 2018-01-20T06:27:30.278Z - npm-testing /home/travis/build/kaizhu256/node-\</tspan>
 <tspan x="10" y="58">swgg-wechat-all</tspan>
 <tspan x="10" y="74"></tspan>
 <tspan x="10" y="90"></tspan>
@@ -12,7 +12,7 @@
 <tspan x="10" y="154">npmTest - merged test-report from file /home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/bui\</tspan>
 <tspan x="10" y="170">ld/test-report.json</tspan>
 <tspan x="10" y="186">override assets assets.swgg.swagger.json</tspan>
-<tspan x="10" y="202">&gt; server listening on http-port 39106</tspan>
+<tspan x="10" y="202">&gt; server listening on http-port 46444</tspan>
 <tspan x="10" y="218">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-wechat-all/package.json</tspan>
 <tspan x="10" y="234">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-wechat-all/assets.swgg.swagger\</tspan>
 <tspan x="10" y="250">.json</tspan>
@@ -37,68 +37,68 @@
 <tspan x="10" y="554">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
 <tspan x="10" y="570"></tspan>
 <tspan x="10" y="586">browserTest - created electron entry-page /home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/\</tspan>
-<tspan x="10" y="602">electron.1610d398efc0.b525149a19742.html</tspan>
+<tspan x="10" y="602">electron.161124030c70.46c3210afc1c5.html</tspan>
 <tspan x="10" y="618"></tspan>
 <tspan x="10" y="634">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
-<tspan x="10" y="650">[5460:0119/070211.637607:WARNING:audio_manager.cc(317)] Multiple instances of AudioManager detec\</tspan>
+<tspan x="10" y="650">[5526:0120/062732.344327:WARNING:audio_manager.cc(317)] Multiple instances of AudioManager detec\</tspan>
 <tspan x="10" y="666">ted</tspan>
-<tspan x="10" y="682">[5460:0119/070211.644421:WARNING:audio_manager.cc(278)] Multiple instances of AudioManager detec\</tspan>
+<tspan x="10" y="682">[5526:0120/062732.344396:WARNING:audio_manager.cc(278)] Multiple instances of AudioManager detec\</tspan>
 <tspan x="10" y="698">ted</tspan>
-<tspan x="10" y="714">&gt; server listening on http-port 33268</tspan>
-<tspan x="10" y="730">[5492:0119/070211.760138:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple t\</tspan>
-<tspan x="10" y="746">hreads in process gpu-process. </tspan>
-<tspan x="10" y="762">[5460:0119/070211.790861:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
-<tspan x="10" y="778">l.</tspan>
-<tspan x="10" y="794">[5460:0119/070211.791498:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
-<tspan x="10" y="810">l.</tspan>
-<tspan x="10" y="826">[5460:0119/070211.793329:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
-<tspan x="10" y="842">l.</tspan>
-<tspan x="10" y="858">[5460:0119/070211.794082:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
+<tspan x="10" y="714">[5556:0120/062732.404005:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple t\</tspan>
+<tspan x="10" y="730">hreads in process gpu-process. </tspan>
+<tspan x="10" y="746">&gt; [5526:0120/062732.510507:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create chan\</tspan>
+<tspan x="10" y="762">nel.</tspan>
+<tspan x="10" y="778">[5526:0120/062732.514140:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
+<tspan x="10" y="794">l.</tspan>
+<tspan x="10" y="810">[5526:0120/062732.517683:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
+<tspan x="10" y="826">l.</tspan>
+<tspan x="10" y="842">server listening on http-port 37948</tspan>
+<tspan x="10" y="858">[5526:0120/062732.525148:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
 <tspan x="10" y="874">l.</tspan>
-<tspan x="10" y="890">[5460:0119/070211.794473:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
+<tspan x="10" y="890">[5526:0120/062732.531386:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
 <tspan x="10" y="906">l.</tspan>
 <tspan x="10" y="922"></tspan>
-<tspan x="10" y="938">browserTest - opened http://127.0.0.1:39106/index.default.html?modeTest=1</tspan>
+<tspan x="10" y="938">browserTest - opened http://127.0.0.1:46444/index.default.html?modeTest=1</tspan>
 <tspan x="10" y="954"></tspan>
-<tspan x="10" y="970">[5460:0119/070212.403163:INFO:CONSOLE(71)] "Uncaught TypeError: Cannot read property '/assets.sw\</tspan>
+<tspan x="10" y="970">[5526:0120/062733.120231:INFO:CONSOLE(71)] "Uncaught TypeError: Cannot read property '/assets.sw\</tspan>
 <tspan x="10" y="986">gg.html' of undefined", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/ele\</tspan>
-<tspan x="10" y="1002">ctron.1610d398efc0.b525149a19742.html (71)</tspan>
-<tspan x="10" y="1018">[5460:0119/070212.428271:INFO:CONSOLE(71)] "[browser test-case 1 of 8 passed] - testCase_buildAp\</tspan>
+<tspan x="10" y="1002">ctron.161124030c70.46c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1018">[5526:0120/062733.144580:INFO:CONSOLE(71)] "[browser test-case 1 of 8 passed] - testCase_buildAp\</tspan>
 <tspan x="10" y="1034">idoc_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.161\</tspan>
-<tspan x="10" y="1050">0d398efc0.b525149a19742.html (71)</tspan>
-<tspan x="10" y="1066">[5460:0119/070212.434935:INFO:CONSOLE(71)] "[browser test-case 2 of 8 passed] - testCase_buildAp\</tspan>
-<tspan x="10" y="1082">p_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.1610d3\</tspan>
-<tspan x="10" y="1098">98efc0.b525149a19742.html (71)</tspan>
-<tspan x="10" y="1114">[5460:0119/070212.435754:INFO:CONSOLE(71)] "[browser test-case 3 of 8 passed] - testCase_buildCu\</tspan>
+<tspan x="10" y="1050">124030c70.46c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1066">[5526:0120/062733.145725:INFO:CONSOLE(71)] "[browser test-case 2 of 8 passed] - testCase_buildAp\</tspan>
+<tspan x="10" y="1082">p_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.161124\</tspan>
+<tspan x="10" y="1098">030c70.46c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1114">[5526:0120/062733.145746:INFO:CONSOLE(71)] "[browser test-case 3 of 8 passed] - testCase_buildCu\</tspan>
 <tspan x="10" y="1130">stomOrg_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.\</tspan>
-<tspan x="10" y="1146">1610d398efc0.b525149a19742.html (71)</tspan>
-<tspan x="10" y="1162">[5460:0119/070212.435786:INFO:CONSOLE(71)] "[browser test-case 4 of 8 passed] - testCase_buildLi\</tspan>
-<tspan x="10" y="1178">b_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.1610d3\</tspan>
-<tspan x="10" y="1194">98efc0.b525149a19742.html (71)</tspan>
-<tspan x="10" y="1210">[5460:0119/070212.435807:INFO:CONSOLE(71)] "[browser test-case 5 of 8 passed] - testCase_buildRe\</tspan>
+<tspan x="10" y="1146">161124030c70.46c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1162">[5526:0120/062733.145761:INFO:CONSOLE(71)] "[browser test-case 4 of 8 passed] - testCase_buildLi\</tspan>
+<tspan x="10" y="1178">b_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.161124\</tspan>
+<tspan x="10" y="1194">030c70.46c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1210">[5526:0120/062733.148970:INFO:CONSOLE(71)] "[browser test-case 5 of 8 passed] - testCase_buildRe\</tspan>
 <tspan x="10" y="1226">adme_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.161\</tspan>
-<tspan x="10" y="1242">0d398efc0.b525149a19742.html (71)</tspan>
-<tspan x="10" y="1258">[5460:0119/070212.435819:INFO:CONSOLE(71)] "[browser test-case 6 of 8 passed] - testCase_buildTe\</tspan>
-<tspan x="10" y="1274">st_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.1610d\</tspan>
-<tspan x="10" y="1290">398efc0.b525149a19742.html (71)</tspan>
-<tspan x="10" y="1306">[5460:0119/070212.435835:INFO:CONSOLE(71)] "[browser test-case 7 of 8 passed] - testCase_nop_def\</tspan>
-<tspan x="10" y="1322">ault", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.1610d398efc\</tspan>
-<tspan x="10" y="1338">0.b525149a19742.html (71)</tspan>
-<tspan x="10" y="1354">[5460:0119/070212.435847:INFO:CONSOLE(71)] "[browser test-case 8 of 8 passed] - testCase_webpage\</tspan>
-<tspan x="10" y="1370">_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.1610d39\</tspan>
-<tspan x="10" y="1386">8efc0.b525149a19742.html (71)</tspan>
-<tspan x="10" y="1402">[5460:0119/070213.436974:INFO:CONSOLE(71)] "----------|-----------|-----------|-----------|-----\</tspan>
+<tspan x="10" y="1242">124030c70.46c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1258">[5526:0120/062733.152552:INFO:CONSOLE(71)] "[browser test-case 6 of 8 passed] - testCase_buildTe\</tspan>
+<tspan x="10" y="1274">st_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.16112\</tspan>
+<tspan x="10" y="1290">4030c70.46c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1306">[5526:0120/062733.154394:INFO:CONSOLE(71)] "[browser test-case 7 of 8 passed] - testCase_nop_def\</tspan>
+<tspan x="10" y="1322">ault", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.161124030c7\</tspan>
+<tspan x="10" y="1338">0.46c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1354">[5526:0120/062733.155950:INFO:CONSOLE(71)] "[browser test-case 8 of 8 passed] - testCase_webpage\</tspan>
+<tspan x="10" y="1370">_default", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.1611240\</tspan>
+<tspan x="10" y="1386">30c70.46c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1402">[5526:0120/062734.155770:INFO:CONSOLE(71)] "----------|-----------|-----------|-----------|-----\</tspan>
 <tspan x="10" y="1418">------|</tspan>
 <tspan x="10" y="1434">File      |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
 <tspan x="10" y="1450">----------|-----------|-----------|-----------|-----------|</tspan>
 <tspan x="10" y="1466">----------|-----------|-----------|-----------|-----------|</tspan>
 <tspan x="10" y="1482">All files |       100 |       100 |       100 |       100 |</tspan>
 <tspan x="10" y="1498">----------|-----------|-----------|-----------|-----------|</tspan>
-<tspan x="10" y="1514">", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.1610d398efc0.b5\</tspan>
-<tspan x="10" y="1530">25149a19742.html (71)</tspan>
-<tspan x="10" y="1546">[5460:0119/070213.441560:INFO:CONSOLE(71)] "created coverage file /tmp/build/coverage.html/index\</tspan>
-<tspan x="10" y="1562">.html", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.1610d398ef\</tspan>
-<tspan x="10" y="1578">c0.b525149a19742.html (71)</tspan>
+<tspan x="10" y="1514">", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.161124030c70.46\</tspan>
+<tspan x="10" y="1530">c3210afc1c5.html (71)</tspan>
+<tspan x="10" y="1546">[5526:0120/062734.160141:INFO:CONSOLE(71)] "created coverage file /tmp/build/coverage.html/index\</tspan>
+<tspan x="10" y="1562">.html", source: file:///home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/electron.161124030c\</tspan>
+<tspan x="10" y="1578">70.46c3210afc1c5.html (71)</tspan>
 <tspan x="10" y="1594">[node test-case 7 of 8 passed] - testCase_buildApp_default</tspan>
 <tspan x="10" y="1610"></tspan>
 <tspan x="10" y="1626">browserTest - created screenshot file /home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/buil\</tspan>
@@ -134,12 +134,12 @@
 <tspan x="10" y="2106"></tspan>
 <tspan x="10" y="2122">-------------------------------------------------------</tspan>
 <tspan x="10" y="2138">| test-report - npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleW\</tspan>
-<tspan x="10" y="2154">ebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-01-19T\</tspan>
-<tspan x="10" y="2170">07:02:12.368Z</tspan>
+<tspan x="10" y="2154">ebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-01-20T\</tspan>
+<tspan x="10" y="2170">06:27:33.085Z</tspan>
 <tspan x="10" y="2186">|      10 ms            0 failed        8 passed      |</tspan>
 <tspan x="10" y="2202">-------------------------------------------------------</tspan>
-<tspan x="10" y="2218">| test-report - npmTest - node - linux v6.12.3 - 2018-01-19T07:02:10.318Z</tspan>
-<tspan x="10" y="2234">|   16453 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="2218">| test-report - npmTest - node - linux v6.12.3 - 2018-01-20T06:27:30.669Z</tspan>
+<tspan x="10" y="2234">|   16732 ms            0 failed        8 passed      |</tspan>
 <tspan x="10" y="2250">-------------------------------------------------------</tspan>
 <tspan x="10" y="2266"></tspan>
 <tspan x="10" y="2282">created test-report file /home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/build/test-report\</tspan>
@@ -149,6 +149,6 @@
 <tspan x="10" y="2346">npmTest - 0 failed tests</tspan>
 <tspan x="10" y="2362"></tspan>
 <tspan x="10" y="2378"></tspan>
-<tspan x="10" y="2394">[MODE_BUILD=npmTest] - 2018-01-19T07:02:28.577Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="2394">[MODE_BUILD=npmTest] - 2018-01-20T06:27:49.346Z - EXIT_CODE - 0</tspan>
 </text>
 </svg>
