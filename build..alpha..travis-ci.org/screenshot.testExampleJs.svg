@@ -1,0 +1,19 @@
+<svg height="254" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="254" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26"></tspan>
+<tspan x="10" y="42">&gt; swgg-wechat@2017.11.21 postinstall /tmp/app/node_modules/swgg-wechat</tspan>
+<tspan x="10" y="58">&gt; [ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall</tspan>
+<tspan x="10" y="74"></tspan>
+<tspan x="10" y="90">/tmp/app</tspan>
+<tspan x="10" y="106">└── swgg-wechat@2017.11.21  (git://github.com/kaizhu256/node-swgg-wechat.git#4a9f0f6321766a7b624\</tspan>
+<tspan x="10" y="122">e7224452cd16642c72943)</tspan>
+<tspan x="10" y="138"></tspan>
+<tspan x="10" y="154">npm WARN enoent ENOENT: no such file or directory, open '/tmp/app/package.json'</tspan>
+<tspan x="10" y="170">npm WARN app No description</tspan>
+<tspan x="10" y="186">npm WARN app No repository field.</tspan>
+<tspan x="10" y="202">npm WARN app No README data</tspan>
+<tspan x="10" y="218">npm WARN app No license field.</tspan>
+<tspan x="10" y="234">server starting on port 8081</tspan>
+</text>
+</svg>
