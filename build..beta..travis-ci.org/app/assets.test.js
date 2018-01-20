@@ -1,4 +1,4 @@
-/* istanbul instrument in package swgg_wechat */
+/* istanbul instrument in package swgg_wechat_all */
 /*jslint
     bitwise: true,
     browser: true,

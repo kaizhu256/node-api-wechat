@@ -1,7 +1,7 @@
 <html lang="en" data-scrape="{
     &quot;hrefDict&quot;: {
         &quot;https://github.com/kaizhu256/node-swgg&quot;: &quot;swgg&quot;,
-        &quot;https://github.com/kaizhu256/node-swgg-wechat&quot;: &quot;swgg-wechat (2017.11.20)&quot;,
+        &quot;https://github.com/kaizhu256/node-swgg-wechat-all&quot;: &quot;swgg-wechat-all (2018.1.19)&quot;,
         &quot;http://open.wechat.com/cgi-bin/newreadtemplate&quot;: &quot;http://open.wechat.com/cgi-bin/newreadtemplate?t=overseas_open/documentation&quot;
     },
     &quot;href&quot;: &quot;http://127.0.0.1:8081/#!swgg_id__2Fpay_2Fcloseorder_20POST_1&quot;,
@@ -11,10 +11,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- "" -->
-<title>swgg-wechat (2017.11.20)</title>
+<title>swgg-wechat-all (2018.1.19)</title>
 <style>
 /*csslint
-    box-model: false,
     box-sizing: false,
     universal-selector: false
 */
@@ -66,16 +65,6 @@ button {
 @keyframes uiAnimateSpin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-.uiAnimateSpin {
-    animation: uiAnimateSpin 2s linear infinite;
-    border: 6px solid #999;
-    border-radius: 50%;
-    border-top: 8px solid #7d7;
-    display: inline-block;
-    height: 25px;
-    vertical-align: middle;
-    width: 25px;
 }
 .utility2FooterDiv {
     text-align: center;
@@ -247,10 +236,6 @@ button {
 .swggUiContainer .resource:first-child {
     border-top: 1px solid #777;
 }
-.swggUiContainer .resource > .thead > .td2 {
-    border-left: 1px solid #777;
-    border-right: 1px solid #777;
-}
 .swggUiContainer .styleBorderBottom1px {
     border-bottom: 1px solid #777;
 }
@@ -365,9 +350,6 @@ button {
 .swggUiContainer .resource:first-child {
     padding-top: 10px;
 }
-.swggUiContainer .resource > .thead > .td2 {
-    padding: 0 20px;
-}
 .swggUiContainer .resourceDescription {
     padding: 10px 20px;
 }
@@ -440,6 +422,7 @@ button {
 </head>
 <body>
 <div id="ajaxProgressDiv1" style="background: transparent; height: 2px; left: 0px; margin: 0px; padding: 0px; position: fixed; top: 0px; transition: background 500ms, width 1500ms; width: 0%; z-index: 1;"></div>
+<div class="uiAnimateSpin" style="animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: none; height: 25px; vertical-align: middle; width: 25px;"></div>
 <script></script>
 <div class="swggUiContainer"><!-- <div class="swggUiContainer"> -->
 <div class="eventDelegateKeyup eventDelegateSubmit onEventUiReload thead">
@@ -452,11 +435,11 @@ button {
 <div class="info reset">
     
     
-    <a href="https://github.com/kaizhu256/node-swgg-wechat" target="_blank"><h2>swgg-wechat (2017.11.20)</h2></a>
+    <a href="https://github.com/kaizhu256/node-swgg-wechat-all" target="_blank"><h2>swgg-wechat-all (2018.1.19)</h2></a>
     
-    <div>this zero-dependency package will provide a swagger-client for wechat's web-apis, with a working web-demo</div>
+    <div>this zero-dependency package will provide a swagger-client for wechat-all's web-apis, with a working web-demo</div>
     
-    <h4><a download="" href="https://kaizhu256.github.io/node-swgg-wechat/build..beta..travis-ci.org/app/assets.app.js">download standalone app</a></h4>
+    <h4><a download="" href="https://kaizhu256.github.io/node-swgg-wechat-all/build..beta..travis-ci.org/app/assets.app.js">download standalone app</a></h4>
     
     <ul>
         
@@ -499,15 +482,14 @@ console.log("initialized swgg-client");
 
 <div id="swggAjaxProgressDiv1" style="text-align: center; display: none;">
     <span>rendering swagger.json</span>
-    <span class="uiAnimateSpin"></span>
+    <div class="uiAnimateSpin" style="animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: inline-block; height: 25px; vertical-align: middle; width: 25px;"></div>
 </div>
 <div class="reset resourceList"><div class="styleBorderBottom1px resource
         eventDelegateChange eventDelegateClick eventDelegateKeyup eventDelegateSubmit
     " data-name="wechat-pay" id="swgg_id_wechat_pay_1">
 <h3 class="thead">
     <span class="onEventResourceDisplayAction td td1" tabindex="0">wechat-pay : https://pay.weixin.qq.com/wechatpay_guide/help_docs.shtml</span>
-    <span class="onEventResourceDisplayAction td td2" tabindex="0">expand / collapse operations</span>
-    <span class="onEventDatatableReload td td3" data-resource-name="wechat-pay" tabindex="0">datatable</span>
+    <span class="onEventResourceDisplayAction td td2" style="border-left: 1px solid #000; margin: 0; padding-left: 20px;" tabindex="0">expand / collapse operations</span>
 </h3>
 <div class="operationList uiAnimateSlide" style="max-height: 100%;">
     <div class="resourceDescription">https://pay.weixin.qq.com/wechatpay_guide/help_docs.shtml</div>
