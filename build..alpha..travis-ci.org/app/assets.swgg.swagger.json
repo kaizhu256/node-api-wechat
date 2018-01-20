@@ -7,7 +7,7 @@
     "info": {
         "description": "this zero-dependency package will provide a swagger-client for wechat-all's web-apis, with a working web-demo",
         "title": "swgg-wechat-all",
-        "version": "2018.1.19",
+        "version": "2018.1.20",
         "x-swgg-downloadStandaloneApp": "https://kaizhu256.github.io/node-swgg-wechat-all/build..beta..travis-ci.org/app/assets.app.js",
         "x-swgg-homepage": "https://github.com/kaizhu256/node-swgg-wechat-all"
     },
