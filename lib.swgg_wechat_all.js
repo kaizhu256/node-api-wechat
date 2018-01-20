@@ -1,4 +1,4 @@
-/* istanbul instrument in package swgg_wechat */
+/* istanbul instrument in package swgg_wechat_all */
 /*jslint
     bitwise: true,
     browser: true,
@@ -40,10 +40,10 @@
         // init utility2_rollup
         local = local.global.utility2_rollup || local;
         // init lib
-        local.local = local.swgg_wechat = local;
+        local.local = local.swgg_wechat_all = local;
         // init exports
         if (local.modeJs === 'browser') {
-            local.global.utility2_swgg_wechat = local;
+            local.global.utility2_swgg_wechat_all = local;
         } else {
             // require builtins
             Object.keys(process.binding('natives')).forEach(function (key) {
@@ -51,11 +51,9 @@
                     local[key] = require(key);
                 }
             });
-            module.exports = local;
+            module.exports = local.global.utility2_rollup || require('./assets.utility2.rollup.js');
             module.exports.__dirname = __dirname;
             module.exports.module = module;
-            module.exports = local.global.utility2_rollup ||
-                require('./assets.utility2.rollup.js');
         }
     }());
 }());
