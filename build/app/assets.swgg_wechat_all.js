@@ -1,8 +1,9 @@
 /* istanbul instrument in package swgg_wechat_all */
+/* jslint-utility2 */
 /*jslint
     bitwise: true,
     browser: true,
-    maxerr: 8,
+    maxerr: 4,
     maxlen: 100,
     node: true,
     nomen: true,
@@ -39,21 +40,27 @@
             : global;
         // init utility2_rollup
         local = local.global.utility2_rollup || local;
-        // init lib
-        local.local = local.swgg_wechat_all = local;
+        /* istanbul ignore next */
+        if (local) {
+            local = local.global.utility2_rollup ||
+                local.global.utility2_rollup_old ||
+                require('./assets.utility2.rollup.js');
+            local.fs = null;
+        }
         // init exports
         if (local.modeJs === 'browser') {
             local.global.utility2_swgg_wechat_all = local;
         } else {
             // require builtins
             Object.keys(process.binding('natives')).forEach(function (key) {
-                if (!local[key] && !(/\/|^_|^sys$/).test(key)) {
+                if (!local[key] && !(/\/|^_|^assert|^sys$/).test(key)) {
                     local[key] = require(key);
                 }
             });
-            module.exports = local.global.utility2_rollup || require('./assets.utility2.rollup.js');
+            module.exports = local;
             module.exports.__dirname = __dirname;
-            module.exports.module = module;
         }
+        // init lib
+        local.local = local.swgg_wechat_all = local;
     }());
 }());
