@@ -1,5 +1,5 @@
 # swgg-wechat-all
-this zero-dependency package will provide a swagger-client for wechat-all's web-apis, with a working web-demo
+this zero-dependency package will provide a (nodejs-compatible) swagger-client for wechat-all's web-apis, with a working web-demo
 
 # live web demo
 - [https://kaizhu256.github.io/node-swgg-wechat-all/build..beta..travis-ci.org/app](https://kaizhu256.github.io/node-swgg-wechat-all/build..beta..travis-ci.org/app)
@@ -8,7 +8,7 @@ this zero-dependency package will provide a swagger-client for wechat-all's web-
 
 
 
-[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-swgg-wechat-all.svg)](https://travis-ci.org/kaizhu256/node-swgg-wechat-all) [![coverage](https://kaizhu256.github.io/node-swgg-wechat-all/build/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-wechat-all/build/coverage.html/index.html) [![snyk.io vulnerabilities](https://snyk.io/test/github/kaizhu256/node-swgg-wechat-all/badge.svg)](https://snyk.io/test/github/kaizhu256/node-swgg-wechat-all)
+[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-swgg-wechat-all.svg)](https://travis-ci.org/kaizhu256/node-swgg-wechat-all) [![coverage](https://kaizhu256.github.io/node-swgg-wechat-all/build/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-wechat-all/build/coverage.html/index.html)
 
 [![NPM](https://nodei.co/npm/swgg-wechat-all.png?downloads=true)](https://www.npmjs.com/package/swgg-wechat-all)
 
@@ -56,7 +56,7 @@ this zero-dependency package will provide a swagger-client for wechat-all's web-
 [![apidoc](https://kaizhu256.github.io/node-swgg-wechat-all/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-swgg-wechat-all/build..beta..travis-ci.org/apidoc.html)
 
 #### todo
-- npm publish 2018.1.20
+- npm publish v2018.1.20
 - add hmac-authentication
 - improve notify_url
 - none
@@ -116,10 +116,11 @@ instruction
 
 
 /* istanbul instrument in package swgg_wechat_all */
+/* jslint-utility2 */
 /*jslint
     bitwise: true,
     browser: true,
-    maxerr: 8,
+    maxerr: 4,
     maxlen: 100,
     node: true,
     nomen: true,
@@ -181,7 +182,7 @@ instruction
         module.exports = local;
         // require builtins
         Object.keys(process.binding('natives')).forEach(function (key) {
-            if (!local[key] && !(/\/|^_|^sys$/).test(key)) {
+            if (!local[key] && !(/\/|^_|^assert|^sys$/).test(key)) {
                 local[key] = require(key);
             }
         });
@@ -202,12 +203,21 @@ instruction
                 );
             }
         });
+/* validateLineSortedReset */
+        // bug-workaround - long $npm_package_buildCustomOrg
+        /* jslint-ignore-begin */
+        local.assetsDict['/assets.swgg_wechat_all.js'] =
+            local.assetsDict['/assets.swgg_wechat_all.js'] ||
+            local.fs.readFileSync(
+                local.__dirname + '/lib.swgg_wechat_all.js',
+                'utf8'
+            ).replace((/^#!/), '//');
+        /* jslint-ignore-end */
+/* validateLineSortedReset */
         local.assetsDict['/'] =
             local.assetsDict['/assets.example.html'] =
             local.assetsDict['/assets.index.template.html']
             .replace((/\{\{env\.(\w+?)\}\}/g), function (match0, match1) {
-                // jslint-hack
-                String(match0);
                 switch (match1) {
                 case 'npm_package_description':
                     return 'the greatest app in the world!';
@@ -228,15 +238,6 @@ instruction
         local.assetsDict['/assets.example.js'] =
             local.assetsDict['/assets.example.js'] ||
             local.fs.readFileSync(__filename, 'utf8');
-        // bug-workaround - long $npm_package_buildCustomOrg
-        /* jslint-ignore-begin */
-        local.assetsDict['/assets.swgg_wechat_all.js'] =
-            local.assetsDict['/assets.swgg_wechat_all.js'] ||
-            local.fs.readFileSync(
-                local.__dirname + '/lib.swgg_wechat_all.js',
-                'utf8'
-            ).replace((/^#!/), '//');
-        /* jslint-ignore-end */
         local.assetsDict['/favicon.ico'] = local.assetsDict['/favicon.ico'] || '';
         // if $npm_config_timeout_exit exists,
         // then exit this process after $npm_config_timeout_exit ms
@@ -314,7 +315,7 @@ instruction
 ```json
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "this zero-dependency package will provide a swagger-client for wechat-all's web-apis, with a working web-demo",
+    "description": "this zero-dependency package will provide a (nodejs-compatible) swagger-client for wechat-all's web-apis, with a working web-demo",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "utility2": "kaizhu256/node-utility2#alpha"
@@ -343,10 +344,12 @@ instruction
         "url": "https://github.com/kaizhu256/node-swgg-wechat-all.git"
     },
     "scripts": {
+        "apidocRawCreate": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptApidocRawCreate",
+        "apidocRawFetch": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptApidocRawFetch",
         "build-ci": "utility2 shReadmeTest build_ci.sh",
         "env": "env",
         "heroku-postbuild": "npm uninstall utility2 2>/dev/null; npm install kaizhu256/node-utility2#alpha && utility2 shDeployHeroku",
-        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptPostinstall",
         "start": "PORT=${PORT:-8080} utility2 start test.js",
         "test": "PORT=$(utility2 shServerPortRandom) utility2 test test.js"
     },
