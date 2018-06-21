@@ -1,9 +1,9 @@
-<svg height="910" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="910" fill="#555" width="720"></rect>
+<svg height="958" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="958" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
 <tspan x="10" y="26"></tspan>
 
-<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2018-06-21T17:52:39.222Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
+<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2018-06-21T17:59:38.692Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
 <tspan x="10" y="58">ode-swgg-wechat-all</tspan>
 
 <tspan x="10" y="74"></tspan>
@@ -15,7 +15,7 @@
 
 <tspan x="10" y="138">override assets /home/travis/build/kaizhu256/node-swgg-wechat-all/assets.swgg.swagger.json</tspan>
 
-<tspan x="10" y="154">&gt; server listening on http-port 64344</tspan>
+<tspan x="10" y="154">&gt; server listening on http-port 56560</tspan>
 
 <tspan x="10" y="170">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-wechat-all/package.json</tspan>
 
@@ -51,10 +51,10 @@
 
 <tspan x="10" y="442">[node test-case 1 of 1 passed] - testCase_buildApidoc_default</tspan>
 
-<tspan x="10" y="458">(node:10787) DeprecationWarning: _linklist module is deprecated. Please use a userland alternati\</tspan>
+<tspan x="10" y="458">(node:13932) DeprecationWarning: _linklist module is deprecated. Please use a userland alternati\</tspan>
 <tspan x="10" y="474">ve.</tspan>
 
-<tspan x="10" y="490">(node:10787) DeprecationWarning: sys is deprecated. Use util instead.</tspan>
+<tspan x="10" y="490">(node:13932) DeprecationWarning: sys is deprecated. Use util instead.</tspan>
 
 <tspan x="10" y="506"></tspan>
 
@@ -65,42 +65,48 @@
 
 <tspan x="10" y="570">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="586">| test-report - buildApidoc - node - linux v6.14.3 - 2018-06-21T17:42:02.850Z</tspan>
+<tspan x="10" y="586">| test-report - buildApidoc - node - linux v6.14.3 - 2018-06-21T17:59:38.938Z</tspan>
 
-<tspan x="10" y="602">|  636821 ms            0 failed        1 passed      |</tspan>
+<tspan x="10" y="602">|     151 ms            0 failed        1 passed      |</tspan>
 
 <tspan x="10" y="618">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="634">| test-report - npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleW\</tspan>
-<tspan x="10" y="650">ebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.15 Safari/537.36 - 2018-06-21\</tspan>
-<tspan x="10" y="666">T17:41:45.086Z</tspan>
+<tspan x="10" y="634">| test-report - npmTest - node - linux v6.14.3 - 2018-06-21T17:59:17.794Z</tspan>
 
-<tspan x="10" y="682">|      14 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="650">|   17832 ms            0 failed        8 passed      |</tspan>
 
-<tspan x="10" y="698">-------------------------------------------------------</tspan>
+<tspan x="10" y="666">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="714">| test-report - npmTest - node - linux v6.14.3 - 2018-06-21T17:41:42.945Z</tspan>
+<tspan x="10" y="682">| test-report - npmTestPublished - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_6\</tspan>
+<tspan x="10" y="698">4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.15 Safari/537.36 - 2\</tspan>
+<tspan x="10" y="714">018-06-21T17:58:12.175Z</tspan>
 
-<tspan x="10" y="730">|   16734 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="730">|      18 ms            0 failed        8 passed      |</tspan>
 
 <tspan x="10" y="746">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="762"></tspan>
+<tspan x="10" y="762">| test-report - npmTestPublished - node - linux v6.14.3 - 2018-06-21T17:58:09.570Z</tspan>
 
-<tspan x="10" y="778">created test-report file /home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/build/test-report\</tspan>
-<tspan x="10" y="794">.html</tspan>
+<tspan x="10" y="778">|   16887 ms            0 failed        8 passed      |</tspan>
+
+<tspan x="10" y="794">-------------------------------------------------------</tspan>
 
 <tspan x="10" y="810"></tspan>
 
-<tspan x="10" y="826"></tspan>
-
-<tspan x="10" y="842">buildApidoc - 0 failed tests</tspan>
+<tspan x="10" y="826">created test-report file /home/travis/build/kaizhu256/node-swgg-wechat-all/tmp/build/test-report\</tspan>
+<tspan x="10" y="842">.html</tspan>
 
 <tspan x="10" y="858"></tspan>
 
 <tspan x="10" y="874"></tspan>
 
-<tspan x="10" y="890">[MODE_BUILD=buildApidoc] - 2018-06-21T17:52:41.220Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="890">buildApidoc - 0 failed tests</tspan>
+
+<tspan x="10" y="906"></tspan>
+
+<tspan x="10" y="922"></tspan>
+
+<tspan x="10" y="938">[MODE_BUILD=buildApidoc] - 2018-06-21T17:59:40.626Z - EXIT_CODE - 0</tspan>
 
 </text>
 </svg>
