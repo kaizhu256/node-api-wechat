@@ -97,9 +97,6 @@
 
 
 
-
-
-
 /*
 example.js
 
@@ -108,7 +105,7 @@ this script will run a web-demo of swgg-wechat-all
 instruction
     1. save this script as example.js
     2. run the shell command:
-        $ npm install swgg-wechat-all && PORT=8081 node example.js
+        $ npm install kaizhu256/node-swgg-wechat-all#alpha && PORT=8081 node example.js
     3. open a browser to http://127.0.0.1:8081 and play with the web-demo
     4. edit this script to suit your needs
 */
@@ -138,24 +135,20 @@ instruction
         // init local
         local = {};
         // init modeJs
-        local.modeJs = (function () {
+        (function () {
             try {
-                return typeof navigator.userAgent === 'string' &&
-                    typeof document.querySelector('body') === 'object' &&
-                    typeof XMLHttpRequest.prototype.open === 'function' &&
-                    'browser';
-            } catch (errorCaughtBrowser) {
-                return module.exports &&
-                    typeof process.versions.node === 'string' &&
+                local.modeJs = typeof process.versions.node === 'string' &&
                     typeof require('http').createServer === 'function' &&
                     'node';
+            } catch (ignore) {
             }
+            local.modeJs = local.modeJs || 'browser';
         }());
         // init global
         local.global = local.modeJs === 'browser'
             ? window
             : global;
-        // init utility2_rollup
+        // re-init local
         local = local.global.utility2_rollup || (local.modeJs === 'browser'
             ? local.global.utility2_swgg_wechat_all
             : global.utility2_moduleExports);
@@ -181,15 +174,43 @@ instruction
         // init exports
         module.exports = local;
         // require builtins
-        Object.keys(process.binding('natives')).forEach(function (key) {
-            if (!local[key] && !(/\/|^_|^assert|^sys$/).test(key)) {
-                local[key] = require(key);
-            }
-        });
+        // local.assert = require('assert');
+        local.buffer = require('buffer');
+        local.child_process = require('child_process');
+        local.cluster = require('cluster');
+        local.console = require('console');
+        local.constants = require('constants');
+        local.crypto = require('crypto');
+        local.dgram = require('dgram');
+        local.dns = require('dns');
+        local.domain = require('domain');
+        local.events = require('events');
+        local.fs = require('fs');
+        local.http = require('http');
+        local.https = require('https');
+        local.module = require('module');
+        local.net = require('net');
+        local.os = require('os');
+        local.path = require('path');
+        local.process = require('process');
+        local.punycode = require('punycode');
+        local.querystring = require('querystring');
+        local.readline = require('readline');
+        local.repl = require('repl');
+        local.stream = require('stream');
+        local.string_decoder = require('string_decoder');
+        local.timers = require('timers');
+        local.tls = require('tls');
+        local.tty = require('tty');
+        local.url = require('url');
+        local.util = require('util');
+        local.v8 = require('v8');
+        local.vm = require('vm');
+        local.zlib = require('zlib');
+        /* validateLineSortedReset */
         // init assets
         local.assetsDict = local.assetsDict || {};
         [
-            'assets.index.css',
             'assets.index.template.html',
             'assets.swgg.swagger.json',
             'assets.swgg.swagger.server.json'
@@ -203,17 +224,15 @@ instruction
                 );
             }
         });
-/* validateLineSortedReset */
-        // bug-workaround - long $npm_package_buildCustomOrg
+        /* validateLineSortedReset */
         /* jslint-ignore-begin */
+        // bug-workaround - long $npm_package_buildCustomOrg
         local.assetsDict['/assets.swgg_wechat_all.js'] =
             local.assetsDict['/assets.swgg_wechat_all.js'] ||
-            local.fs.readFileSync(
-                local.__dirname + '/lib.swgg_wechat_all.js',
-                'utf8'
-            ).replace((/^#!/), '//');
+            local.fs.readFileSync(local.__dirname + '/lib.swgg_wechat_all.js', 'utf8'
+        ).replace((/^#!\//), '// ');
         /* jslint-ignore-end */
-/* validateLineSortedReset */
+        /* validateLineSortedReset */
         local.assetsDict['/'] =
             local.assetsDict['/assets.example.html'] =
             local.assetsDict['/assets.index.template.html']

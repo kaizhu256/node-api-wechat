@@ -36,6 +36,11 @@
 a {
     overflow-wrap: break-word;
 }
+body {
+    background: #eef;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 40px;
+}
 body > div,
 body > pre,
 body > textarea,
@@ -461,10 +466,10 @@ textarea {
 }
 </style>
 </head>
-<body style="background: #eef; font-family: Arial, Helvetica, sans-serif; margin: 0 40px;">
+<body>
 <div id="ajaxProgressDiv1" style="background: transparent; height: 2px; left: 0px; margin: 0px; padding: 0px; position: fixed; top: 0px; transition: background 500ms, width 1500ms; width: 0%; z-index: 1;"></div>
 <div class="uiAnimateSpin" style="animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: none; height: 25px; vertical-align: middle; width: 25px;"></div>
-<code style="display: none;"></code><div class="button uiAnimateShake uiAnimateSlide utility2FooterDiv zeroPixel" style="display: none;"></div><pre style="display: none;"></pre><textarea readonly="" style="display: none;"></textarea>
+<code style="display: none;"></code><div class="button colorError uiAnimateShake uiAnimateSlide utility2FooterDiv zeroPixel" style="display: none;"></div><pre style="display: none;"></pre><textarea readonly="" style="display: none;"></textarea>
 <script>
 /* jslint-utility2 */
 /*jslint
@@ -477,12 +482,18 @@ textarea {
     regexp: true,
     stupid: true
 */
+// init timerIntervalAjaxProgressUpdate
 (function () {
+/*
+ * this function will increment the ajax-progress-bar until the webpage has loaded
+ */
     "use strict";
     var ajaxProgressDiv1,
         ajaxProgressState,
-        ajaxProgressUpdate,
-        timerIntervalAjaxProgressUpdate;
+        ajaxProgressUpdate;
+    if (window.timerIntervalAjaxProgressUpdate) {
+        return;
+    }
     ajaxProgressDiv1 = document.querySelector("#ajaxProgressDiv1");
     setTimeout(function () {
         ajaxProgressDiv1.style.width = "25%";
@@ -498,17 +509,43 @@ textarea {
             }, 500);
         }, 1500);
     };
-    timerIntervalAjaxProgressUpdate = setInterval(function () {
+    window.timerIntervalAjaxProgressUpdate = setInterval(function () {
         ajaxProgressState += 1;
         ajaxProgressDiv1.style.width = Math.max(
             100 - 75 * Math.exp(-0.125 * ajaxProgressState),
-            Number(ajaxProgressDiv1.style.width.slice(0, -1)) || 0
+            ajaxProgressDiv1.style.width.slice(0, -1) | 0
         ) + "%";
     }, 1000);
     window.addEventListener("load", function () {
-        clearInterval(timerIntervalAjaxProgressUpdate);
+        clearInterval(window.timerIntervalAjaxProgressUpdate);
         ajaxProgressUpdate();
     });
+}());
+// init domOnEventSelectAllWithinPre
+(function () {
+/*
+ * this function will limit select-all within <pre tabIndex="0"> elements
+ * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
+ */
+    "use strict";
+    if (window.domOnEventSelectAllWithinPre) {
+        return;
+    }
+    window.domOnEventSelectAllWithinPre = function (event) {
+        var range, selection;
+        if (event &&
+                event.code === "KeyA" &&
+                (event.ctrlKey || event.metaKey) &&
+                event.target.closest("pre")) {
+            range = document.createRange();
+            range.selectNodeContents(event.target.closest("pre"));
+            selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            event.preventDefault();
+        }
+    };
+    document.addEventListener("keydown", window.domOnEventSelectAllWithinPre);
 }());
 </script>
 <div class="swggUiContainer" style="margin: 0 auto; max-width: 1200px;"><!-- <div class="swggUiContainer"> -->
@@ -562,7 +599,7 @@ textarea {
 </div>
 
 <h4 class="label">nodejs initialization</h4>
-<pre id="swggAjaxProgressPre1">/*
+<pre id="swggAjaxProgressPre1" tabindex="0">/*
  * initialize nodejs swgg-client
  * 1. download currently-loaded apis to file swagger.json:
  *     $ curl -L -o swagger.json "http://127.0.0.1:8081/assets.swgg.swagger.json"
@@ -601,7 +638,7 @@ console.log("initialized nodejs swgg-client");
     <div class="description markdown"><p>find out more about wechat-pay's web-apis</p>
 </div>
 <div class="operation" data-_method-path="POST /pay/closeorder" id="swgg_id__2Fpay_2Fcloseorder_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">1.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -825,7 +862,7 @@ This API needs to be called before a vendor wants to create a new order due to t
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript">/*
+    <pre class="requestJavascript" tabindex="0">/*
  * reproduce api-call "POST /pay/closeorder"
  * 1. initialize nodejs swgg-client from previous step
  * 2. run code below to reproduce api-call
@@ -848,7 +885,7 @@ swgg.apiDict["POST /pay/closeorder"].ajax({
 });
 </pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl">curl \
+    <pre class="requestCurl" tabindex="0">curl \
 --request POST \
 --header 'Content-Type: application/xml' \
 --data-binary '&lt;?xml version="1.0"?&gt;
@@ -862,14 +899,14 @@ swgg.apiDict["POST /pay/closeorder"].ajax({
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/downloadbill" id="swgg_id__2Fpay_2Fdownloadbill_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">2.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -1217,20 +1254,20 @@ REFUND: Return refunded orders only.</p>
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/micropay" id="swgg_id__2Fpay_2Fmicropay_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">3.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -1747,20 +1784,20 @@ Note: If the payment is performed based on PC web page or WeChat Web-based page,
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/orderquery#out_trade_no.required" id="swgg_id__2Fpay_2Forderquery_23out_trade_no_required_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">4.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -2018,20 +2055,20 @@ This API allows inquiry of all payment orders made from WeChat. After receiving 
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/orderquery#transaction_id.required" id="swgg_id__2Fpay_2Forderquery_23transaction_id_required_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">5.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -2289,20 +2326,20 @@ This API allows inquiry of all payment orders made from WeChat. After receiving 
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/queryexchagerate" id="swgg_id__2Fpay_2Fqueryexchagerate_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">6.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -2500,20 +2537,20 @@ The interface could inquiry the exchange rate which Wechat Payment used in real 
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/refundquery#out_refund_no.required" id="swgg_id__2Fpay_2Frefundquery_23out_refund_no_required_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">7.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -2768,20 +2805,20 @@ The interface could inquiry the exchange rate which Wechat Payment used in real 
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/refundquery#out_trade_no.required" id="swgg_id__2Fpay_2Frefundquery_23out_trade_no_required_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">8.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -3039,20 +3076,20 @@ After submitting Submit Refund, this API can be called to check the refund statu
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/refundquery#refund_id.required" id="swgg_id__2Fpay_2Frefundquery_23refund_id_required_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">9.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -3311,20 +3348,20 @@ After submitting Submit Refund, this API can be called to check the refund statu
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/refundquery#transaction_id.required" id="swgg_id__2Fpay_2Frefundquery_23transaction_id_required_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">10.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -3582,20 +3619,20 @@ After submitting Submit Refund, this API can be called to check the refund statu
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/settlementquery" id="swgg_id__2Fpay_2Fsettlementquery_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">11.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -3905,20 +3942,20 @@ This API helps query the details of settled funds.</span>
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /pay/unifiedorder" id="swgg_id__2Fpay_2Funifiedorder_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">12.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -4600,20 +4637,20 @@ Note: If the payment is performed based on PC web page or WeChat Web-based page,
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /payitil/report" id="swgg_id__2Fpayitil_2Freport_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">13.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -5150,20 +5187,20 @@ Parameter format checking error</p>
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /secapi/pay/refund#out_trade_no.required" id="swgg_id__2Fsecapi_2Fpay_2Frefund_23out_trade_no_required_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">14.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -5525,20 +5562,20 @@ For a period after a payment transaction has been completed and a refund is requ
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /secapi/pay/refund#transaction_id.required" id="swgg_id__2Fsecapi_2Fpay_2Frefund_23transaction_id_required_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">15.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -5900,20 +5937,20 @@ For a period after a payment transaction has been completed and a refund is requ
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /secapi/pay/reverse" id="swgg_id__2Fsecapi_2Fpay_2Freverse_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">16.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -6163,20 +6200,20 @@ When a payment transaction isn't successfully returned or the payment system tim
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /tools/shorturl" id="swgg_id__2Ftools_2Fshorturl_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">17.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -6434,20 +6471,20 @@ This API is used for the URL embedded in a QR code when using native payment met
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
 <div class="operation" data-_method-path="POST /{}" id="swgg_id__2F_7Bnotify_url_7D_20POST_1">
-<div class="onEventInputValidate onEventOperationDisplayShow thead" tabindex="0">
+<div class="onEventInputValidateAndAjax onEventOperationDisplayShow thead" tabindex="0">
     <span class="td td1">18.</span>
     <span class="methodPOST td td2">POST</span>
     <span class="td td3">
@@ -6575,15 +6612,15 @@ Parameter format checking error</p>
     
     <button class="button onEventOperationAjax">try it out!</button>
     <h4 class="label">nodejs request</h4>
-    <pre class="requestJavascript"></pre>
+    <pre class="requestJavascript" tabindex="0"></pre>
     <h4 class="label">curl request</h4>
-    <pre class="requestCurl"></pre>
+    <pre class="requestCurl" tabindex="0"></pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
-    <pre class="responseHeaders"></pre>
+    <pre class="responseHeaders" tabindex="0"></pre>
     <h4 class="label">response body</h4>
-    <pre class="responseBody"></pre>
+    <pre class="responseBody" tabindex="0"></pre>
     <div class="responseMedia"></div>
 </form>
 </div>
