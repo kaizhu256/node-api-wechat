@@ -6,7 +6,7 @@ this script will run a web-demo of swgg-wechat-all
 instruction
     1. save this script as example.js
     2. run the shell command:
-        $ npm install swgg-wechat-all && PORT=8081 node example.js
+        $ npm install kaizhu256/node-swgg-wechat-all#alpha && PORT=8081 node example.js
     3. open a browser to http://127.0.0.1:8081 and play with the web-demo
     4. edit this script to suit your needs
 */
